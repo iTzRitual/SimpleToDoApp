@@ -10,7 +10,7 @@ export function Header({ toDoItems, showForm, setShowForm }) {
     }
   };
   return (
-    <header className="flex justify-between items items-center pb-3">
+    <header className="items flex items-center justify-between pb-3">
       <div>
         <h1 className="text-3xl font-bold text-slate-950">
           {toDoItems.length ? "Do zrobienia" : "Wszystko zrobione"}
@@ -24,7 +24,7 @@ export function Header({ toDoItems, showForm, setShowForm }) {
         )}
       </div>
       <button
-        className={`text-xl bg-slate-200 border border-transparent rounded-full block w-12 h-12 transition-all hover:bg-blue-400 hover:text-slate-50 ${showForm ? "rotate-45 bg-red-200 hover:bg-red-400" : ""}`}
+        className={`block h-12 w-12 rounded-full border border-transparent bg-slate-200 text-xl leading-none transition-all hover:bg-blue-400 hover:text-slate-50 ${showForm ? "rotate-45 bg-red-200 hover:bg-red-400" : ""}`}
         onClick={() => {
           setShowForm(!showForm);
         }}

@@ -41,7 +41,7 @@ function App() {
   };
 
   return (
-    <div className="w-[500px] max-h-full bg-slate-50 p-8 rounded-2xl shadow-md border border-slate-200 flex flex-col">
+    <div className="b flex max-h-full w-[500px] flex-col rounded-2xl border border-slate-200 bg-slate-50 p-8 shadow-md max-sm:w-full">
       <Header
         toDoItems={toDoItems}
         showForm={showForm}

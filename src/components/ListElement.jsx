@@ -2,14 +2,16 @@ import { ActionButton } from "./ActionButton";
 
 export function ListElement({ item, onRemove, onToggle }) {
   return (
-    <div className="border-t flex justify-between py-4" key={item.id}>
-      <span className={item.done ? "line-through" : ""}>{item.name}</span>
-      <div className="flex">
+    <div className="flex justify-between border-t py-4" key={item.id}>
+      <span className={`{item.done ? "line-through" : ""} break-words`}>
+        {item.name}
+      </span>
+      <div className="flex items-center">
         <ActionButton
           className={
             item.done
-              ? "bg-yellow-100 hover:bg-yellow-400 hover:text-slate-900 hover:border-yellow-400"
-              : "bg-green-100 hover:bg-green-400 hover:text-slate-900 hover:border-green-400"
+              ? "bg-yellow-100 hover:border-yellow-400 hover:bg-yellow-400 hover:text-slate-900"
+              : "bg-green-100 hover:border-green-400 hover:bg-green-400 hover:text-slate-900"
           }
           handleButtonClick={() => {
             onToggle(item.id);
@@ -19,7 +21,7 @@ export function ListElement({ item, onRemove, onToggle }) {
         </ActionButton>
         <ActionButton
           className={
-            "bg-red-100 hover:bg-red-400 hover:text-white hover:border-red-400"
+            "bg-red-100 hover:border-red-400 hover:bg-red-400 hover:text-white"
           }
           handleButtonClick={() => {
             onRemove(item.id);
